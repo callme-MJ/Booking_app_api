@@ -1,0 +1,1 @@
+export const createHotel = async 
