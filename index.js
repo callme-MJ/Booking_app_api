@@ -6,6 +6,7 @@ import authRoute from "./routes/auth.js";
 import usersRoute from "./routes/users.js"
 import hotelsRoute from "./routes/hotels.js"
 import roomsRoute from "./routes/rooms.js"
+import cookieParser from "cookie-parser";
 dotenv.config();
 
 const connect = async ()=>{
@@ -26,6 +27,8 @@ app.get("/", (req, res) => {
     res.send("Hello World");
 });
 
+
+app.use(cookieParser())
 app.use(express.json())
 app.use("/api/auth", authRoute)
 app.use("/api/users", usersRoute)
